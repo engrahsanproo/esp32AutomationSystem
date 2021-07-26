@@ -1,0 +1,34 @@
+*****Main Components of this project:*****
+
+- Code for ESP32 on Arduio IDE
+- Android app code on Android Studio
+- Firebase Realtime Database
+
+
+
+*****Working:*****
+
+The main objective behind making this project was to allow the user to take control of the appliances from a single device remotely, even if he is away from the office/store. To achieve this goal, various sensors were integrated with a microcontroller with a built-in Wi-Fi module. Theses sensors include, DHT11, PIR, LDR and relay modules. All these sensors collect data and send it to the microcontroller. Then this microcontroller sends this data to the firebase database through an internet connection. This data is then fetched from the firebase database and displayed on the android application.
+Android application controlls "4 appliances + 1 Fan + 1 Light" connected to relay module. User have an option if he wants to control the Light and Fan automatically or manually. (variable for this option in database is given as "Toggle")
+
+
+
+*****Procedure:***** 
+
+1) See the screenshot of Firebase Database attached and make a database accordingly.
+2) Configure your ArduinoIDE to use ESP32.
+3) Goto "Sketch -> Include Library -> Manage Libraries" and install "ArduinoJson by Benoit Balnchon" Version 5.13.4.
+4) Goto "Sketch -> Include Library -> Add ZIP Libraries" and add libraries for "DHT11" and "Firebase Database". (These Libraries are attached with the code in this repository. For further information you can visit the following link)
+	https://github.com/mobizt/Firebase-ESP32
+5) Update the "FIREBASE_HOST", "FIREBASE_AUTH", "WIFI_SSID", and, "WIFI_PASSWORD" according to your project and local internet connection.
+6) Compile and upload the code on ESP32 and run the project.
+
+
+
+*****Components Used:*****
+
+1) DHT11 Sensor
+2) LDR Module
+3) PIR Sensor
+4) ESP32 Microcontroller
+5) Relay Modules
